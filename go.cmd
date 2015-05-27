@@ -26,5 +26,18 @@ cmd /c puppet apply software.pp
 cmd /c puppet apply env_config.pp
 @REM === Setup packages and environment END
 
+@REM === Set pinned taskbar items START
+del /q "%APPDATA%\Microsoft\Internet Explorer\Quick Launch\User Pinned\*"
+reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband /va /f
+@REM this launches explorer as an administrator which makes all child processes run as admin as well
+@REM taskkill /im explorer.exe /f
+@REM start explorer.exe
+cscript pinitem.vbs /item:"%PROGRAMFILES(x86)%\Google\Chrome\Application\chrome.exe" /taskbar
+cscript pinitem.vbs /item:"%PROGRAMFILES(x86)%\Mozilla Firefox\firefox.exe" /taskbar
+cscript pinitem.vbs /item:"%PROGRAMFILES%\ConEmu\ConEmu64.exe" /taskbar
+cscript pinitem.vbs /item:"%PROGRAMFILES(x86)%\Mozilla Thunderbird\thunderbird.exe" /taskbar
+cscript pinitem.vbs /item:"%WINDIR%\explorer.exe" /taskbar
+@REM === Set pinned taskbar items END
+
 popd
 @REM === Laptop setup END
