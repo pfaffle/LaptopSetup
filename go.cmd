@@ -1,8 +1,11 @@
 @echo off
+set POWERSHELL64=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+set POWERSHELL32=C:\Windows\SYSWOW64\WindowsPowerShell\v1.0\powershell.exe
 @REM === Laptop setup START
 pushd %~dp0
 
-powershell Set-ExecutionPolicy Bypass -Force
+%POWERSHELL64% -NoProfile Set-ExecutionPolicy Bypass -Force
+%POWERSHELL32% -NoProfile Set-ExecutionPolicy Bypass -Force
 
 @REM === Chocolatey setup START
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))"
