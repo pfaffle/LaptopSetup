@@ -21,3 +21,10 @@ windows_env { 'GIT_SSH':
 	user      => $user,
 	value     => 'C:\Program Files (x86)\PuTTY\plink.exe',
 }
+
+file { 'ConEmu config':
+	ensure             => file,
+	path               => "${$userprofile[2]}/ConEmu.xml",
+	source             => 'Z:/LaptopSetup/ConEmu.xml',
+	source_permissions => ignore,
+}
