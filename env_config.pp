@@ -1,6 +1,7 @@
 $user = 'pfaffle'
 $realname = 'Craig Meinschein'
 $userprofile = ["C:/Users/$user/","C:/Users/$user/AppData/","C:/Users/$user/AppData/Roaming"]
+$tbprofiledir = ["${$userprofile[2]}/Thunderbird","${$userprofile[2]}/Thunderbird/Profiles","${$userprofile[2]}/Thunderbird/Profiles/76818gag.default"]
 
 user { $user:
 	ensure     => present,
@@ -28,3 +29,23 @@ file { 'ConEmu config':
 	source             => 'Z:/LaptopSetup/Profile/ConEmu.xml',
 	source_permissions => ignore,
 }
+
+file { $tbprofiledir:
+	ensure             => directory,
+	source_permissions => ignore,
+}
+
+file { 'Thunderbird profile ini':
+	ensure             => file,
+	path               => "${$tbprofiledir[0]}/profiles.ini",
+	source             => 'Z:/LaptopSetup/Profile/Thunderbird/profiles.ini',
+	source_permissions => ignore,
+}
+
+file { 'Thunderbird profile prefs`':
+	ensure             => file,
+	path               => "${$tbprofiledir[2]}/prefs.js",
+	source             => 'Z:/LaptopSetup/Profile/Thunderbird/Profiles/76818gag.default/prefs.js',
+	source_permissions => ignore,
+}
+
