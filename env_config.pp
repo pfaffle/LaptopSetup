@@ -25,6 +25,6 @@ windows_env { 'GIT_SSH':
 file { 'ConEmu config':
 	ensure             => file,
 	path               => "${$userprofile[2]}/ConEmu.xml",
-	source             => 'Z:/LaptopSetup/ConEmu.xml',
+	source             => 'Z:/LaptopSetup/Profile/ConEmu.xml',
 	source_permissions => ignore,
 }
