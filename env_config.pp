@@ -3,14 +3,6 @@ $realname = 'Craig Meinschein'
 $userprofile = ["C:/Users/$user/","C:/Users/$user/AppData/","C:/Users/$user/AppData/Roaming"]
 $tbprofiledir = ["${$userprofile[2]}/Thunderbird","${$userprofile[2]}/Thunderbird/Profiles","${$userprofile[2]}/Thunderbird/Profiles/76818gag.default"]
 
-user { $user:
-	ensure     => present,
-	comment    => $realname,
-	groups     => ['Administrators','Users'],
-	managehome => true,
-	password   => 'Temppass1',
-}
-
 file { $userprofile:
 	ensure             => directory,
 	source_permissions => ignore,
