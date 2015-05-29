@@ -570,7 +570,7 @@
 					<value name="Flags" type="dword" data="00000001"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
-					<value name="Cmd1" type="string" data="&quot;C:\Program Files (x86)\PuTTY\kitty.exe&quot; -load &quot;Default Settings&quot;"/>
+					<value name="Cmd1" type="string" data="&quot;C:\ProgramData\Chocolatey\lib\kitty.portable\tools\kitty.exe&quot; -load &quot;Default Settings&quot;"/>
 					<value name="Active" type="dword" data="00000000"/>
 					<value name="Count" type="dword" data="00000001"/>
 				</key>
@@ -579,7 +579,7 @@
 					<value name="Flags" type="dword" data="00000000"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
-					<value name="Cmd1" type="string" data="&quot;C:\Program Files (x86)\PuTTY\kitty.exe&quot;"/>
+					<value name="Cmd1" type="string" data="&quot;C:\ProgramData\Chocolatey\lib\kitty.portable\tools\kitty.exe&quot;"/>
 					<value name="Active" type="dword" data="00000000"/>
 					<value name="Count" type="dword" data="00000001"/>
 				</key>
