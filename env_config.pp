@@ -15,6 +15,12 @@ windows_env { 'GIT_SSH':
 	value     => 'C:\Program Files (x86)\PuTTY\plink.exe',
 }
 
+windows_env { 'PSModulePath':
+	ensure    => present,
+	value     => 'C:\Program Files\Common Files\Modules',
+	separator => ';',
+}
+
 file { 'ConEmu config':
 	ensure             => file,
 	path               => "${$userprofile[2]}/ConEmu.xml",

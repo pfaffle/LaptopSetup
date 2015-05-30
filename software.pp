@@ -11,6 +11,10 @@ package { 'poshgit':
   ensure   => latest,
   provider => 'chocolatey',
 }
+package { 'psget':
+  ensure   => latest,
+  provider => 'chocolatey',
+}
 # Editors
 package { 'notepadplusplus.install':
   ensure   => latest,
