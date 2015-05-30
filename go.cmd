@@ -27,6 +27,7 @@ cmd /c puppet module install badgerious-windows_env
 @REM === Setup packages and environment START
 cmd /c puppet apply software.pp
 cmd /c puppet apply env_config.pp
+@powershell -NoProfile -Command "&{Import-Module PsGet; Install-Module -Global PSReadline}"
 @REM === Setup packages and environment END
 
 @REM === Set pinned taskbar items START
