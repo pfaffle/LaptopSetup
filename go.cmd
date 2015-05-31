@@ -43,7 +43,6 @@ cscript pinitem.vbs /item:"%PROGRAMFILES(x86)%\Google\Chrome\Application\chrome.
 cscript pinitem.vbs /item:"%PROGRAMFILES(x86)%\Mozilla Firefox\firefox.exe" /taskbar
 cscript pinitem.vbs /item:"%PROGRAMFILES%\ConEmu\ConEmu64.exe" /taskbar
 cscript pinitem.vbs /item:"%PROGRAMFILES(x86)%\Mozilla Thunderbird\thunderbird.exe" /taskbar
-cscript pinitem.vbs /item:"%WINDIR%\explorer.exe" /taskbar
 @REM === Set pinned taskbar items END
 
 net use z: /del
