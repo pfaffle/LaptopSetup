@@ -70,3 +70,11 @@ package { 'intellijidea-community':
   ensure   => latest,
   provider => 'chocolatey',
 }
+package { 'jdk7':
+  ensure   => latest,
+  provider => 'chocolatey',
+}
+package { 'jdk8':
+  ensure   => latest,
+  provider => 'chocolatey',
+}
