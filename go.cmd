@@ -3,6 +3,9 @@ set POWERSHELL64=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 set POWERSHELL32=C:\Windows\SYSWOW64\WindowsPowerShell\v1.0\powershell.exe
 @REM === Laptop setup START
 pushd %~dp0
+set dir=%~dp0
+if exist z: net use /del z:
+net use z: \\localhost\%dir:~0,1%$\%dir:~3,-1%
 
 %POWERSHELL64% -NoProfile Set-ExecutionPolicy Bypass -Force
 %POWERSHELL32% -NoProfile Set-ExecutionPolicy Bypass -Force
@@ -43,5 +46,6 @@ cscript pinitem.vbs /item:"%PROGRAMFILES(x86)%\Mozilla Thunderbird\thunderbird.e
 cscript pinitem.vbs /item:"%WINDIR%\explorer.exe" /taskbar
 @REM === Set pinned taskbar items END
 
+net use z: /del
 popd
 @REM === Laptop setup END
