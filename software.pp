@@ -7,10 +7,6 @@ package { 'conemu':
   ensure   => latest,
   provider => 'chocolatey',
 }
-package { 'poshgit':
-  ensure   => latest,
-  provider => 'chocolatey',
-}
 package { 'psget':
   ensure   => latest,
   provider => 'chocolatey',
