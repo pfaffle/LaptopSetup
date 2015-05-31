@@ -47,3 +47,9 @@ file { 'Thunderbird profile prefs`':
 	source_permissions => ignore,
 }
 
+file { 'vimrc':
+	ensure             => file,
+	path               => "${$userprofile[0]}/.vimrc",
+	source             => 'Z:/LaptopSetup/profile/.vimrc',
+	source_permissions => ignore,
+}
