@@ -74,3 +74,7 @@ package { 'jdk8':
   ensure   => latest,
   provider => 'chocolatey',
 }
+package { 'vlc':
+  ensure   => latest,
+  provider => 'chocolatey',
+}
