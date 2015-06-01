@@ -5,6 +5,7 @@ set POWERSHELL32=C:\Windows\SYSWOW64\WindowsPowerShell\v1.0\powershell.exe
 pushd %~dp0
 set dir=%~dp0
 if exist z: net use /del z:
+echo Pushing \\localhost\%dir:~0,1%$\%dir:~3,-1%
 net use z: \\localhost\%dir:~0,1%$\%dir:~3,-1%
 
 %POWERSHELL64% -NoProfile Set-ExecutionPolicy Bypass -Force
