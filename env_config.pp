@@ -24,7 +24,7 @@ windows_env { 'PSModulePath':
 file { 'ConEmu config':
 	ensure             => file,
 	path               => "${$userprofile[2]}/ConEmu.xml",
-	source             => 'Z:/LaptopSetup/Profile/ConEmu.xml',
+	source             => 'Z:/profile/ConEmu.xml',
 	source_permissions => ignore,
 }
 
@@ -36,20 +36,20 @@ file { $tbprofiledir:
 file { 'Thunderbird profile ini':
 	ensure             => file,
 	path               => "${$tbprofiledir[0]}/profiles.ini",
-	source             => 'Z:/LaptopSetup/Profile/Thunderbird/profiles.ini',
+	source             => 'Z:/profile/Thunderbird/profiles.ini',
 	source_permissions => ignore,
 }
 
 file { 'Thunderbird profile prefs`':
 	ensure             => file,
 	path               => "${$tbprofiledir[2]}/prefs.js",
-	source             => 'Z:/LaptopSetup/Profile/Thunderbird/Profiles/76818gag.default/prefs.js',
+	source             => 'Z:/profile/Thunderbird/Profiles/76818gag.default/prefs.js',
 	source_permissions => ignore,
 }
 
 file { 'vimrc':
 	ensure             => file,
 	path               => "${$userprofile[0]}/.vimrc",
-	source             => 'Z:/LaptopSetup/profile/.vimrc',
+	source             => 'Z:/profile/.vimrc',
 	source_permissions => ignore,
 }
