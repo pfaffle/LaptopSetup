@@ -50,7 +50,7 @@ if ERRORLEVEL 1 set PATH=%PATH%;%PuppetPath%
 @REM === Setup packages and environment END
 
 @REM === Set pinned taskbar items START
-del /q "%APPDATA%\Microsoft\Internet Explorer\Quick Launch\User Pinned\*"
+del /q "%APPDATA%\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\*"
 %CMD_NATIVE% /c reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband /va /f
 @REM this launches explorer as an administrator which makes all child processes run as admin as well
 @REM taskkill /im explorer.exe /f
