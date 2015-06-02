@@ -78,3 +78,7 @@ package { 'vlc':
   ensure   => latest,
   provider => 'chocolatey',
 }
+package { 'pidgin':
+  ensure   => latest,
+  provider => 'chocolatey',
+}
