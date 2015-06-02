@@ -45,6 +45,8 @@ if ERRORLEVEL 1 set PATH=%PATH%;%PuppetPath%
 %CMD_NATIVE% /c puppet apply software.pp
 %CMD_NATIVE% /c puppet apply env_config.pp
 %POWERSHELL_NATIVE% -NoProfile -Command "&{Import-Module PsGet; Install-Module -Global PSReadline}"
+%CMD_NATIVE% /c reg import "Z:\profile\KiTTY\Hostkeys.reg"
+%CMD_NATIVE% /c reg import "Z:\profile\KiTTY\Sessions.reg"
 @REM === Setup packages and environment END
 
 @REM === Set pinned taskbar items START
