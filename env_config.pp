@@ -53,3 +53,10 @@ file { 'vimrc':
 	source             => 'Z:/profile/.vimrc',
 	source_permissions => ignore,
 }
+
+file { 'Run pageant script':
+	ensure             => file,
+	path               => "${$userprofile[2]}/Microsoft/Windows/Start Menu/Programs/Startup/run_pageant.cmd",
+	source             => 'Z:/profile/run_pageant.cmd',
+	source_permissions => ignore,
+}
