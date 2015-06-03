@@ -60,3 +60,15 @@ file { 'Run pageant script':
 	source             => 'Z:/profile/run_pageant.cmd',
 	source_permissions => ignore,
 }
+
+file { "${userprofile[2]}/KiTTY":
+	ensure             => directory,
+	source_permissions => ignore,
+}
+
+file { 'KiTTY config':
+	ensure             => file,
+	path               => "${$userprofile[2]}/KiTTY/kitty.ini",
+	source             => 'Z:/profile/KiTTY/kitty.ini',
+	source_permissions => ignore,
+}
