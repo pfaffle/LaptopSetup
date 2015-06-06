@@ -28,14 +28,14 @@ net use z: \\localhost\%dir:~0,1%$\%dir:~3,-1%
 %POWERSHELL_NATIVE% -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))"
 set ChocolateyInstall=%PROGRAMDATA%\Chocolatey
 set ChocolateyPath=%ChocolateyInstall%\bin
-echo %PATH% | findstr "%ChocolateyPath%" >nul 2>&1
+echo %PATH% | findstr /I /C:"%ChocolateyPath%" >nul 2>&1
 if ERRORLEVEL 1 set PATH=%PATH%;%ChocolateyPath%
 @REM === Chocolatey setup END
 
 @REM === Puppet setup START
 %CMD_NATIVE% /c choco install puppet -y
 set PuppetPath=C:\Program Files\Puppet Labs\Puppet\bin
-echo %PATH% | findstr "%PuppetPath%" >nul 2>&1
+echo %PATH% | findstr /I /C:"%PuppetPath%" >nul 2>&1
 if ERRORLEVEL 1 set PATH=%PATH%;%PuppetPath%
 %CMD_NATIVE% /c puppet module install chocolatey-chocolatey
 %CMD_NATIVE% /c puppet module install badgerious-windows_env
